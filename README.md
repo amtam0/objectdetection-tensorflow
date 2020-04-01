@@ -52,15 +52,20 @@ wget http://download.tensorflow.org/models/object_detection/faster_rcnn_inceptio
 tar -xzf faster_rcnn_inception_v2_coco_2018_01_28.tar.gz
 ```
 
+### Edit generate_tfrecord for your own use
+
 ### Generate train and test records
 
 ```
+cd models/research/object_detection/
 python xml_to_csv.py
 python generate_tfrecord.py --csv_input=images/train_labels.csv --image_dir=images/train --output_path=train.record
 
 python generate_tfrecord.py --csv_input=images/test_labels.csv --image_dir=images/test --output_path=test.record
 ```
 ### Edit training/model.config
+
+### Edit training/labelmap.pbtxt
 
 ### Train 
 
